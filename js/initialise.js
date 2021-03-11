@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
     // var carouselSlider = $('#carousel1');
     //     carouselSlider.owlCarousel({
 
@@ -41,8 +41,7 @@ $(document).ready(function () {
         prevArrow: $('#prices-prev-btn'),
         nextArrow: $('#prices-next-btn'),
         dots: true,
-        responsive: [
-            {
+        responsive: [{
                 breakpoint: 1750,
                 settings: {
                     slidesToShow: 2,
@@ -67,7 +66,7 @@ $(document).ready(function () {
         ]
     });
 });
-$(document).ready(function () {
+$(document).ready(function() {
     var carouselSlider = $('#carousel2');
     carouselSlider.owlCarousel({
 
@@ -91,20 +90,20 @@ $(document).ready(function () {
         }
     });
 
-    $('#stock-next-btn').click(function () {
+    $('#stock-next-btn').click(function() {
         carouselSlider.trigger('next.owl.carousel');
     });
 
-    $('#stock-prev-btn ').click(function () {
+    $('#stock-prev-btn ').click(function() {
         carouselSlider.trigger('prev.owl.carousel');
     });
 });
-$(document).ready(function () {
+$(document).ready(function() {
 
-    $('.toggle').click(function (e) {
+    $('.toggle').click(function(e) {
         e.preventDefault();
 
-        $('.question-block-wrap').on('click', function () {
+        $('.question-block-wrap').on('click', function() {
             $(this).addClass('active').siblings().removeClass('active');
         });
         var $this = $(this);
@@ -123,72 +122,72 @@ $(document).ready(function () {
         }
     });
     /*
-    *
-    * ***************** СКРИПТЫ КОНТРОЛЛОВ ФОРМ  *****************
-    *
-    */
+     *
+     * ***************** СКРИПТЫ КОНТРОЛЛОВ ФОРМ  *****************
+     *
+     */
 
     /*Вешаем валидацию на чекбокс, радио и тугл*/
-    $('.inputCheck input:required, .inputToggle input:required').change(function (event) {
+    $('.inputCheck input:required, .inputToggle input:required').change(function(event) {
         if ($(this).not('checked'))
             $(this).addClass('validate');
     });
 
-    $('.inputRadio input:required').change(function (event) {
+    $('.inputRadio input:required').change(function(event) {
         if ($(this).not('checked'))
             $('.inputRadio input[name="' + $(this).attr('name') + '"]')
-                .addClass('validate');
+            .addClass('validate');
     });
-    $('.inputCheck input:required, .inputToggle input:required').focusout(function (event) {
+    $('.inputCheck input:required, .inputToggle input:required').focusout(function(event) {
         if ($(this).not('checked'))
             $(this).addClass('validate');
     });
 
-    $('.inputRadio input:required').focusout(function (event) {
+    $('.inputRadio input:required').focusout(function(event) {
         if ($(this).not('checked'))
             $('.inputRadio input[name="' + $(this).attr('name') + '"]')
-                .addClass('validate');
+            .addClass('validate');
     });
 
 
     /*Вешаем валидацию на инпут и текстэриа*/
-    $('.inputText input:required, .inputTextArea textarea:required').change(function (event) {
+    $('.inputText input:required, .inputTextArea textarea:required').change(function(event) {
         $(this).addClass('validate');
     });
-    $('.inputText input:required, .inputTextArea textarea:required').focusout(function (event) {
+    $('.inputText input:required, .inputTextArea textarea:required').focusout(function(event) {
         $(this).addClass('validate');
     });
 
-    $('.inputText .showPassword').click(function (event) {
+    $('.inputText .showPassword').click(function(event) {
         var input = $(this).closest('.inputText').find('input'),
             type = input.attr('type') == "text" ? "password" : 'text';
         input.prop('type', type);
     });
 
-    $('.inputText input, .inputTextArea textarea').each(function (index, el) {
+    $('.inputText input, .inputTextArea textarea').each(function(index, el) {
         if ($(el).val() != '')
             $(el).addClass('filled')
         else
             $(el).removeClass('filled');
     });
 
-    $('.inputText input, .inputTextArea textarea').change(function (event) {
+    $('.inputText input, .inputTextArea textarea').change(function(event) {
         if ($(this).val() != '')
             $(this).addClass('filled')
         else
             $(this).removeClass('filled');
     });
-    $('.inputText input, .inputTextArea textarea').focusout(function (event) {
+    $('.inputText input, .inputTextArea textarea').focusout(function(event) {
         if ($(this).val() != '')
             $(this).addClass('filled')
         else
             $(this).removeClass('filled');
     });
 
-    $('.inputTextArea textarea').each(function (index, el) {
+    $('.inputTextArea textarea').each(function(index, el) {
         toggleTextAreaPlaceholder(el);
     });
-    $('.inputTextArea textarea').scroll(function (event) {
+    $('.inputTextArea textarea').scroll(function(event) {
         toggleTextAreaPlaceholder(this);
     });
 
@@ -196,33 +195,32 @@ $(document).ready(function () {
         var placeholder = $(textarea).closest('.inputTextArea').find('.placeholder');
         if ($(textarea).scrollTop() > placeholder.height()) {
             placeholder.css('opacity', 0);
-        }
-        else {
+        } else {
             placeholder.css('opacity', 1);
         }
     }
 
 
     /*
-    *
-    * ////////////////// СКРИПТЫ КОНТРОЛЛОВ ФОРМ  //////////////////
-    *
-    */
+     *
+     * ////////////////// СКРИПТЫ КОНТРОЛЛОВ ФОРМ  //////////////////
+     *
+     */
     /* Табы */
-    $(function () {
+    $(function() {
         var menuLink = $('.menu-link');
         var menu = $('.navbar-2');
         var close = $('.close-btn');
         var navLink = $('.navbar-2 li a');
 
-        menuLink.click(function () {
+        menuLink.click(function() {
             menu.toggleClass('active-menu');
         });
-        close.click(function () {
+        close.click(function() {
             menu.toggleClass('active-menu');
         });
 
-        navLink.on('click', function (event) {
+        navLink.on('click', function(event) {
             event.preventDefault();
             var target = $(this).attr('href');
             var top = $(target).offset().top;
@@ -247,8 +245,7 @@ $(document).ready(function () {
         centerMode: true,
         centerPadding: '30px',
         focusOnSelect: true,
-        responsive: [
-            {
+        responsive: [{
                 breakpoint: 1750,
                 settings: {
                     slidesToShow: 5,
@@ -308,16 +305,15 @@ $(document).ready(function () {
 });
 
 
-$(document).ready(function () {
-    $('nav > .topmenu li > a.g').on('click', function () {
+$(document).ready(function() {
+    $('nav > .topmenu li > a.g').on('click', function() {
         $(this).removeAttr('href');
         var element = $(this).parent('li');
         if (element.hasClass('open')) {
             element.removeClass('open');
             element.find('li').removeClass('open');
             element.find('ul').slideUp();
-        }
-        else {
+        } else {
             element.addClass('open');
             element.children('ul').slideDown();
             element.siblings('li').children('ul').slideUp();

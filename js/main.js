@@ -1,12 +1,7 @@
 /* lighthallery */
 
-jQuery(document).ready(function ($) {
+jQuery(document).ready(function($) {
 
- $(".lightgallery").lightGallery({
- });
+    $(".lightgallery").lightGallery({});
 
 });
-
-
-
-

@@ -2845,8 +2845,10 @@ body .container {
     z-index: 12;
     max-width: 388px;
     width: 100%;
-    left: 225px;
     position: absolute;
+    left: 225px;
+    top: 0;
+    bottom: 0;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2861,7 +2863,7 @@ body .container {
     -ms-flex-pack: distribute;
     justify-content: space-around;
     bottom: 0;
-    height: 100%;
+    /* height: 100%; */
 }
 
 @media screen and (max-width: 1450px) {

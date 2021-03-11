@@ -1396,29 +1396,64 @@
         <!-- социальные сети -->
 
         <!-- карта -->
-        <section id="map1" class="map">
+        <section class="map" style="min-height: 546px; display: flex;">
 
-            <div id="map" class="map" style="height: 450px; width: 100%;"></div>
-            <div class="popup">
+            <div id="map" class="map" style="min-height: 450px; width: 100%;"></div>
 
-                <div id="address-list"></div>
-                <div class="adress-street">
-                    <img src="img/assets/placeholder.svg" alt="placeholder"> пр. Коммунистический, 76 (ЦУМ, 3 этаж)
-                </div>
-                <div class="number-phone">
-                    <img src="img/assets/phone.svg" alt="phone">
-                    <div class="phone-wrap">
-                        <a href="tel:+79139916666">+7 (913) 991−66−66</a>
-                        <a href="tel:+79236626666">+7 (923) 662−66−66</a>
+            <div class="popup" style="padding: 3rem 2rem; justify-content: flex-start;">
+
+                <div class="dropdown" style="display: inline-block; width: auto; align-self: flex-start; margin-bottom: 2rem;">
+                    <div style="font-size: 24px; font-weight: normal; text-decoration: none; margin-left: 0;">
+                        <span x-text="active"></span> <i class="fas fa-angle-down"></i>
+                    </div>
+
+                    <div class="dropdown-content" style="left: 0; transform: none;">
+                        <ul>
+                            <template x-for="city, idx in cities">
+                                <li :class="active == city ? 'active' : ''" @click="active = city; window.localStorage.setItem('city', city);" x-text="city" :key="idx"></li>
+                            </template>
+                        </ul>
                     </div>
                 </div>
-                <div class="mail">
-                    <img src="img/assets/at.svg" alt="at">
-                    <a href="mailto:azc6666@mail.ru">azc6666@mail.ru</a>
+                
+                <div x-show="active == 'Горно-Алтайск'">
+                    <div class="adress-street" style="margin-bottom: 1.5rem;">
+                        <img src="img/assets/placeholder.svg" alt="placeholder"> пр. Коммунистический, 76 (ЦУМ, 3 этаж)
+                    </div>
+                    <div class="number-phone" style="margin-bottom: 1.5rem;">
+                        <img src="img/assets/phone.svg" alt="phone">
+                        <div class="phone-wrap">
+                            <a href="tel:+7 (983) 583−99−99">+7 (983) 583−99−99</a>
+                        </div>
+                    </div>
+                    <div class="mail" style="margin-bottom: 1.5rem;">
+                        <img src="img/assets/at.svg" alt="at">
+                        <a href="mailto:azc6666@mail.ru">azc6666@mail.ru</a>
+                    </div>
+                    <div class="time-work" style="margin-bottom: 1.5rem;">
+                        <img src="img/assets/time.svg" alt="time"> ПН-ПТ 09:00 - 18:00 без перерыва на обед
+                    </div>
                 </div>
-                <div class="time-work">
-                    <img src="img/assets/time.svg" alt="time"> ПН-ПТ 09:00 - 18:00 без перерыва на обед
+                
+                <div x-show="active == 'Онгудай'">
+                    <div class="adress-street" style="margin-bottom: 1.5rem;">
+                        <img src="img/assets/placeholder.svg" alt="placeholder"> пр. Коммунистический, 76 (ЦУМ, 3 этаж)
+                    </div>
+                    <div class="number-phone" style="margin-bottom: 1.5rem;">
+                        <img src="img/assets/phone.svg" alt="phone">
+                        <div class="phone-wrap">
+                            <a href="tel:+79139916666">+7 (913) 991−66−66</a>
+                        </div>
+                    </div>
+                    <div class="mail" style="margin-bottom: 1.5rem;">
+                        <img src="img/assets/at.svg" alt="at">
+                        <a href="mailto:azc6666@mail.ru">azc6666@mail.ru</a>
+                    </div>
+                    <div class="time-work" style="margin-bottom: 1.5rem;">
+                        <img src="img/assets/time.svg" alt="time"> ПН-ПТ 09:00 - 18:00 без перерыва на обед
+                    </div>
                 </div>
+                
             </div>
             <script>
                 var map, infoWindow;
@@ -1464,7 +1499,7 @@
                         map: map,
                         title: name,
                         icon: {
-                            url: ("img/assets/map-logo.png"),
+                            url: ("img/assets/placemap.svg"),
                         }
                     });
 
@@ -1502,51 +1537,6 @@
                 });
             </script>
             <div id="address-list"></div>
-            <script>
-                const addressList = document.querySelector('#address-list');
-
-                addressList.innerHTML = markersData.map((n, i) => `
-                    <div data-index=${i} id="both${i}" class="address-list-item" >
-                        ${n.name}
-                    </div>
-                    `).join('');
-
-
-                $('#address-list #both1 ').click(function() {
-                    $('.adress-street').html('<img src="img/assets/placeholder.svg" alt="placeholder"> ​Советская, 73​, кабинет №8; здание Россельхозбанка 2 этаж')
-                    $('.phone-wrap').html('<a href="tel:+79835839999"> +7 (983) 583−99−99</a>')
-                    $('.time-work').html('<img src="img/assets/time.svg" alt="time"> ПН-ПТ 09:00 - 17:00 обед 12:00-13:00')
-                        // $(this('#address-list .address-list-item')).toggleClass('active')
-                    $('#both1').css('color', 'white');
-                    $('#both0').css('color', 'black');
-                    $('#address-list .address-list-item:last-child').css({
-                        'background-color': '#3BB361'
-                    });
-                    $('#address-list .address-list-item:first-child').css({
-                        'background-color': '#ffffff'
-                    });
-                });
-                $('#address-list #both0').click(function() {
-                    $('.adress-street').html('<img src="img/assets/placeholder.svg" alt="placeholder"> пр. Коммунистический, 76 (ЦУМ, 3 этаж)')
-                    $('.phone-wrap').html('<a href="tel:+79139916666">+7 (913) 991−66−66</a> <a href="tel:+79236626666">+7 (923) 662−66−66</a>')
-                    $('.time-work').html('<img src="img/assets/time.svg" alt="time"> ПН-ПТ 09:00 - 18:00 без перерыва на обед')
-                    $('#both0').css('color', 'white');
-                    $('#both1').css('color', 'black');
-                    $('#address-list .address-list-item:first-child').css({
-                        'background-color': '#3BB361'
-                    });
-                    $('#address-list .address-list-item:last-child').css({
-                        'background-color': '#ffffff'
-                    });
-                });
-
-                addressList.addEventListener('click', e => {
-                    const marker = markersData[e.target.dataset.index];
-                    if (marker) {
-                        map.setCenter(new google.maps.LatLng(marker.lat, marker.lng));
-                    }
-                });
-            </script>
 
         </section>
         <!-- карта -->

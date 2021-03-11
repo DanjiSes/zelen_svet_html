@@ -1,0 +1,115 @@
+@charset "UTF-8";
+.inputText {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  position: relative;
+  text-align: left;
+  z-index: 0;
+  line-height: 48px;
+  font-size: 16px; }
+  .inputText button {
+    position: absolute;
+    background: none;
+    border: none;
+    right: 15px;
+    top: 20px;
+    margin: 0;
+    padding: 3px;
+    cursor: pointer;
+    outline: none;
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -webkit-transform 0.2s;
+    -o-transition: transform 0.2s;
+    transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s; }
+    .inputText button:focus {
+      color: green; }
+    .inputText button:disabled {
+      cursor: default;
+      color: gold; }
+  .inputText .placeholder {
+    width: 100%;
+    top: 1px;
+    left: 1px;
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: inherit;
+    z-index: -1;
+    opacity: 1; }
+  .inputText input {
+    width: 100%;
+    display: block;
+    line-height: inherit;
+    height: 48px;
+    background: transparent;
+    color: #141414;
+    padding: 0 15px;
+    z-index: 1;
+    border: none;
+    -webkit-border-radius: 0px;
+            border-radius: 0px;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s; }
+    .inputText input:-moz-placeholder {
+      opacity: 1; }
+    .inputText input::-moz-placeholder {
+      opacity: 1; }
+    .inputText input::-webkit-input-placeholder {
+      opacity: 1; }
+    .inputText input:-ms-input-placeholder {
+      opacity: 1; }
+    .inputText input::-ms-input-placeholder {
+      font-size: 18px; }
+    .inputText input::placeholder {
+      font-size: 18px; }
+    .inputText input:focus {
+      outline: none;
+      font-size: 16px; }
+      .inputText input:focus ~ .placeholder {
+        color: green; }
+      .inputText input:focus ~ button {
+        -webkit-transform: translateY(23px);
+            -ms-transform: translateY(23px);
+                transform: translateY(23px); }
+    .inputText input:disabled ~ .placeholder {
+      color: #141414; }
+    .inputText input.filled {
+      color: #141414;
+      border: none;
+      border-color: blue;
+      text-transform: uppercase;
+      font-size: 16px; }
+      .inputText input.filled ~ .placeholder {
+        color: #141414; }
+      .inputText input.filled ~ button {
+        -webkit-transform: translateY(23px);
+            -ms-transform: translateY(23px);
+                transform: translateY(23px);
+        color: #141414; }
+    .inputText input[type=search] {
+      padding-right: 40px; }
+    .inputText input:invalid {
+      -webkit-box-shadow: none;
+              box-shadow: none; }
+    .inputText input.validate:invalid ~ .placeholder:after {
+      content: ' (Не заполнено)'; }
+    .inputText input.validate:invalid:focus ~ .placeholder {
+      color: red; }
+    .inputText input.validate:invalid, .inputText input.error {
+      border-color: red;
+      color: red; }
+      .inputText input.validate:invalid ~ button, .inputText input.error ~ button {
+        color: red; }
+      .inputText input.validate:invalid[type=url] ~ .placeholder:after, .inputText input.error[type=url] ~ .placeholder:after {
+        content: ' (Не верный URL)'; }
+      .inputText input.validate:invalid[type=email] ~ .placeholder:after, .inputText input.error[type=email] ~ .placeholder:after {
+        content: ' (Не верный Email)'; }
+      .inputText input.validate:invalid[type=password] ~ .placeholder:after, .inputText input.error[type=password] ~ .placeholder:after {
+        content: ' (Не верный)'; }
+      .inputText input.validate:invalid ~ .placeholder[data-error-text]:after, .inputText input.error ~ .placeholder[data-error-text]:after {
+        content: " " attr(data-error-text); }

@@ -1,0 +1,195 @@
+.form {
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #ffffff;
+  margin: auto; }
+  .form .title {
+    font-size: 24px;
+    font-weight: 700; }
+    .form .title span {
+      color: #3BB361; }
+  .form .inputText {
+    max-width: 250px;
+    width: 100%;
+    background: #F5F5F5;
+    margin-top: 20px;
+    padding-left: 10px; }
+    .form .inputText .wrap-input {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
+  .form .inputCheck {
+    margin-top: 40px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: left; }
+    .form .inputCheck label input {
+      vertical-align: middle; }
+    .form .inputCheck label a {
+      text-decoration: none;
+      color: #3BB361; }
+  .form .main-btn {
+    margin-top: 30px;
+    max-width: 250px;
+    width: 100%;
+    padding: 20px; }
+
+.form-2 {
+  max-width: 545px;
+  width: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #ffffff;
+  margin: auto; }
+  .form-2 .close {
+    -webkit-align-self: flex-end;
+        -ms-flex-item-align: end;
+            align-self: flex-end; }
+  .form-2 .title {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center; }
+    .form-2 .title span {
+      color: #3BB361; }
+  .form-2 .subtitle {
+    font-size: 12px;
+    max-width: 315px;
+    width: 100%;
+    margin: 0 auto; }
+  .form-2 .inputText {
+    width: 225px;
+    background: #F5F5F5;
+    margin-top: 20px;
+    padding-left: 10px; }
+    .form-2 .inputText .wrap-input {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      .form-2 .inputText .wrap-input input::-webkit-input-placeholder {
+        font-family: Open Sans, serif;
+        font-weight: 300; }
+      .form-2 .inputText .wrap-input input::-moz-placeholder {
+        font-family: Open Sans, serif;
+        font-weight: 300; }
+      .form-2 .inputText .wrap-input input::-ms-input-placeholder {
+        font-family: Open Sans, serif;
+        font-weight: 300; }
+      .form-2 .inputText .wrap-input input::placeholder {
+        font-family: Open Sans, serif;
+        font-weight: 300; }
+  .form-2 .inputCheck {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: left;
+    margin: 40px auto;
+    max-width: 250px; }
+    .form-2 .inputCheck label input {
+      vertical-align: middle; }
+    .form-2 .inputCheck label a {
+      text-decoration: none;
+      color: #3BB361; }
+  .form-2 .input-url {
+    max-width: 450px;
+    width: 100%; }
+  .form-2 .inputTextArea {
+    max-width: 450px;
+    margin-top: 15px; }
+    .form-2 .inputTextArea textarea {
+      padding-left: 20px;
+      font-size: 18px;
+      padding-top: 20px; }
+      .form-2 .inputTextArea textarea::-webkit-input-placeholder {
+        font-family: Open Sans, serif;
+        font-weight: 300; }
+      .form-2 .inputTextArea textarea::-moz-placeholder {
+        font-family: Open Sans, serif;
+        font-weight: 300; }
+      .form-2 .inputTextArea textarea::-ms-input-placeholder {
+        font-family: Open Sans, serif;
+        font-weight: 300; }
+      .form-2 .inputTextArea textarea::placeholder {
+        font-family: Open Sans, serif;
+        font-weight: 300; }
+  .form-2 .main-btn {
+    margin-top: 10px;
+    max-width: 250px;
+    width: 100%; }
+  .form-2 .block-alternative {
+    text-align: center;
+    background: #F5F5F5;
+    width: 100%;
+    padding: 35px 0 40px 0; }
+    .form-2 .block-alternative .title {
+      font-size: 18px;
+      font-weight: 400; }
+    .form-2 .block-alternative a {
+      display: block;
+      color: #141414;
+      font-size: 24px;
+      font-weight: 700;
+      padding-top: 15px;
+      text-decoration: none; }
+      .form-2 .block-alternative a:hover {
+        color: #3BB361; }
+  .form-2 .fancybox-close-small {
+    width: 50px;
+    height: 50px; }
+
+#form-1 {
+  display: none; }
+
+#form-2 {
+  display: none; }
+
+#form-3 {
+  display: none; }
+  #form-3 .inputTextArea {
+    width: 100%;
+    max-width: 100%; }
+    #form-3 .inputTextArea textarea {
+      padding-left: 20px;
+      font-size: 18px;
+      padding-top: 20px; }
+
+#form-4 {
+  display: none; }

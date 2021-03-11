@@ -1,0 +1,72 @@
+@charset "UTF-8";
+.inputTextArea {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  position: relative;
+  text-align: left;
+  z-index: 0;
+  margin-bottom: 20px;
+  line-height: 18px; }
+  .inputTextArea .placeholder {
+    position: absolute;
+    width: 100%;
+    top: 1px;
+    left: 1px;
+    color: #636363;
+    padding: 0 15px;
+    line-height: 58px;
+    z-index: -1;
+    opacity: 1; }
+  .inputTextArea textarea {
+    width: 100%;
+    display: block;
+    line-height: inherit;
+    background: #F5F5F5;
+    height: 160px;
+    color: #141414;
+    resize: none;
+    border: none;
+    z-index: 1;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s; }
+    .inputTextArea textarea:-moz-placeholder {
+      opacity: 1; }
+    .inputTextArea textarea::-moz-placeholder {
+      opacity: 1; }
+    .inputTextArea textarea::-webkit-input-placeholder {
+      opacity: 1; }
+    .inputTextArea textarea:-ms-input-placeholder {
+      opacity: 1; }
+    .inputTextArea textarea::-ms-input-placeholder {
+      font-size: 18px; }
+    .inputTextArea textarea::placeholder {
+      font-size: 18px; }
+    .inputTextArea textarea:focus {
+      outline: none;
+      border-color: green; }
+      .inputTextArea textarea:focus ~ .placeholder {
+        color: green; }
+    .inputTextArea textarea:disabled ~ .placeholder {
+      color: #ccc; }
+    .inputTextArea textarea.filled {
+      color: #141414;
+      border-color: blue; }
+      .inputTextArea textarea.filled ~ .placeholder {
+        color: #ccc; }
+    .inputTextArea textarea[type=search] {
+      padding-right: 40px; }
+    .inputTextArea textarea.validate:invalid ~ .placeholder:after {
+      content: ' (Не заполнено)'; }
+    .inputTextArea textarea.validate:invalid, .inputTextArea textarea.error {
+      border-color: red;
+      color: red; }
+      .inputTextArea textarea.validate:invalid[type=url] ~ .placeholder:after, .inputTextArea textarea.error[type=url] ~ .placeholder:after {
+        content: ' (Не верный URL)'; }
+      .inputTextArea textarea.validate:invalid[type=email] ~ .placeholder:after, .inputTextArea textarea.error[type=email] ~ .placeholder:after {
+        content: ' (Не верный Email)'; }
+      .inputTextArea textarea.validate:invalid[type=password] ~ .placeholder:after, .inputTextArea textarea.error[type=password] ~ .placeholder:after {
+        content: ' (Не верный)'; }
+      .inputTextArea textarea.validate:invalid ~ .placeholder[data-error-text]:after, .inputTextArea textarea.error ~ .placeholder[data-error-text]:after {
+        content: " " attr(data-error-text); }

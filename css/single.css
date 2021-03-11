@@ -1,0 +1,35 @@
+#licenses,
+#routes{
+	padding-top: 120px;
+}
+#licenses .links,
+#routes .links{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+#licenses .links a{
+	padding: 50px 50px;
+}
+#routes .links a{
+	padding: 30px 30px;
+}
+#licenses ul.other,
+#routes div.other{
+	margin-bottom: 50px;
+}
+#licenses ul.other li{
+	list-style-type: none;
+	margin-top: 10px;
+}
+#licenses ul.other li a,
+#routes div.other a.routes{
+	text-decoration: none;
+	color: #141414;
+	font-weight: 600;
+}
+#licenses ul.other li a:hover,
+#routes div.other a.routes:hover{
+	color: #F64744;
+    text-decoration: underline;
+}

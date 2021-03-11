@@ -1,0 +1,153 @@
+.map {
+  position: relative; }
+  @media screen and (max-width: 1450px) {
+    .map {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: reverse;
+      -webkit-flex-direction: row-reverse;
+          -ms-flex-direction: row-reverse;
+              flex-direction: row-reverse; } }
+  @media screen and (max-width: 850px) {
+    .map {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: reverse;
+      -webkit-flex-direction: column-reverse;
+          -ms-flex-direction: column-reverse;
+              flex-direction: column-reverse; } }
+  .map .popup {
+    background: rgba(255, 255, 255, 0.85);
+    z-index: 12;
+    max-width: 388px;
+    width: 100%;
+    left: 225px;
+    position: absolute;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-left: 60px;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+    bottom: 0;
+    height: 100%; }
+    @media screen and (max-width: 1450px) {
+      .map .popup {
+        position: static;
+        height: 450px; } }
+    @media screen and (max-width: 850px) {
+      .map .popup {
+        max-width: 850px;
+        width: auto; } }
+    @media screen and (max-width: 450px) {
+      .map .popup {
+        padding-left: 20px; } }
+    .map .popup a {
+      text-decoration: none;
+      color: #141414; }
+    .map .popup img {
+      padding-right: 10px; }
+    .map .popup .adress-street {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      max-width: 270px;
+      width: 100%;
+      font-size: 18px; }
+    .map .popup .number-phone {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      max-width: 200px;
+      width: 100%;
+      font-size: 18px;
+      font-weight: 700; }
+      .map .popup .number-phone .phone-wrap a {
+        display: block; }
+    .map .popup .mail {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      font-size: 18px; }
+    .map .popup .time-work {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      max-width: 230px;
+      width: 100%;
+      font-size: 18px; }
+
+#address-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  #address-list .address-list-item {
+    width: 165px;
+    height: 50px;
+    background-color: #ffffff;
+    text-align: center;
+    margin: 0 5px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 18px;
+    color: #141414;
+    border: solid 2px #3BB361;
+    cursor: pointer; }
+    #address-list .address-list-item:first-child {
+      background: #3BB361;
+      color: #ffffff; }
+    @media screen and (max-width: 450px) {
+      #address-list .address-list-item {
+        width: 150px;
+        height: 35px;
+        font-size: 14px; } }
+    @media screen and (max-width: 360px) {
+      #address-list .address-list-item {
+        width: 120px;
+        height: 25px; } }
+    #address-list .address-list-item:active {
+      color: #ffffff;
+      background-color: #3BB361; }
+  #address-list .active {
+    background-color: #3BB361;
+    color: #ffffff; }

@@ -1,0 +1,88 @@
+footer #footer {
+  background-color: #333333;
+  color: #ffffff; }
+  footer #footer a {
+    color: #ffffff; }
+  footer #footer .container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 100px;
+    padding-bottom: 85px;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    @media screen and (max-width: 980px) {
+      footer #footer .container {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center; } }
+    footer #footer .container .about-company {
+      max-width: 390px;
+      width: 100%; }
+      footer #footer .container .about-company .about-company-name {
+        font-size: 24px; }
+        footer #footer .container .about-company .about-company-name span {
+          font-weight: 700;
+          font-size: 27px; }
+        @media screen and (max-width: 980px) {
+          footer #footer .container .about-company .about-company-name {
+            font-size: 18px;
+            text-align: center; } }
+        @media screen and (max-width: 1400px) {
+          footer #footer .container .about-company .about-company-name {
+            font-size: 22px; }
+            footer #footer .container .about-company .about-company-name span {
+              font-size: 22px; } }
+      footer #footer .container .about-company .about-company-year {
+        padding-top: 65px;
+        font-size: 24px; }
+        @media screen and (max-width: 980px) {
+          footer #footer .container .about-company .about-company-year {
+            text-align: center;
+            padding-top: 20px; } }
+    footer #footer .container .documents {
+      font-size: 27px;
+      font-weight: 600;
+      max-width: 400px;
+      width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      footer #footer .container .documents a:hover {
+        color: #F64744; }
+      @media screen and (max-width: 980px) {
+        footer #footer .container .documents {
+          font-size: 22px;
+          text-align: center;
+          padding-top: 20px; } }
+      @media screen and (max-width: 1400px) {
+        footer #footer .container .documents {
+          font-size: 24px; } }
+    @media screen and (max-width: 980px) {
+      footer #footer .container .developers {
+        padding-top: 20px; } }
+    footer #footer .container .developers .developer {
+      color: #cccccc; }
+      footer #footer .container .developers .developer a {
+        color: #cccccc; }
+        footer #footer .container .developers .developer a:hover {
+          color: #ffffff; }

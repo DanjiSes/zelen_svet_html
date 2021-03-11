@@ -1,0 +1,80 @@
+.inputCheck {
+  position: relative;
+  margin-bottom: 20px; }
+  .inputCheck a {
+    color: #141414;
+    font-size: 14px;
+    line-height: 28px; }
+  .inputCheck label {
+    color: #141414;
+    position: relative;
+    cursor: pointer;
+    font-size: 12px;
+    vertial-align: middle;
+    font-family: "Roboto Regular", sans-serif;
+    padding-left: 50px; }
+    .inputCheck label span {
+      font-family: inherit; }
+    .inputCheck label:before {
+      display: block;
+      height: 25px;
+      width: 25px;
+      left: 10px;
+      top: -2px;
+      background: transparent;
+      position: absolute;
+      content: '';
+      border: 2px solid #3BB361;
+      -webkit-border-radius: 50%;
+              border-radius: 50%;
+      -webkit-transition: border 0.2s;
+      -o-transition: border 0.2s;
+      transition: border 0.2s; }
+    .inputCheck label:after {
+      display: inline-block;
+      vertical-align: top;
+      height: 7px;
+      width: 19px;
+      border-left: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+      position: absolute;
+      -webkit-transform: rotate(0) scale(0);
+          -ms-transform: rotate(0) scale(0);
+              transform: rotate(0) scale(0);
+      content: '';
+      left: 18px;
+      top: 1px;
+      -webkit-transition: border 0.2s, -webkit-transform 0.4s;
+      transition: border 0.2s, -webkit-transform 0.4s;
+      -o-transition: transform 0.4s, border 0.2s;
+      transition: transform 0.4s, border 0.2s;
+      transition: transform 0.4s, border 0.2s, -webkit-transform 0.4s; }
+    .inputCheck label:hover:before {
+      border-color: #3BB361; }
+  .inputCheck input[type=checkbox] {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    opacity: 0; }
+    .inputCheck input[type=checkbox]:checked + label:before {
+      border-color: #3BB361; }
+    .inputCheck input[type=checkbox]:checked + label:after {
+      border-left: 3px solid #141414;
+      border-bottom: 3px solid #141414;
+      -webkit-transform: rotate(-45deg) scale(1);
+          -ms-transform: rotate(-45deg) scale(1);
+              transform: rotate(-45deg) scale(1); }
+    .inputCheck input[type=checkbox]:focus + label:before {
+      border-color: #3BB361; }
+    .inputCheck input[type=checkbox]:disabled + label {
+      color: gold;
+      cursor: default; }
+      .inputCheck input[type=checkbox]:disabled + label:before {
+        border-color: gold;
+        background: gold; }
+      .inputCheck input[type=checkbox]:disabled + label:after {
+        display: none; }
+    .inputCheck input[type=checkbox].validate:invalid + label {
+      color: red; }
+      .inputCheck input[type=checkbox].validate:invalid + label:before {
+        border-color: red; }

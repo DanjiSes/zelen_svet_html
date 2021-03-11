@@ -1,0 +1,152 @@
+#schema {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  padding-top: 90px; }
+  @media screen and (max-width: 1280px) {
+    #schema {
+      max-width: 800px;
+      margin: 0 auto; } }
+  @media screen and (max-width: 600px) {
+    #schema {
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center; } }
+  @media screen and (max-width: 980px) {
+    #schema {
+      max-width: 500px; } }
+
+.schema-item {
+  max-width: 525px;
+  width: 100%;
+  height: 225px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .schema-item h3 {
+    max-width: 500px;
+    width: 100%; }
+    .schema-item h3 span {
+      font-weight: 400; }
+  @media screen and (max-width: 1750px) {
+    .schema-item:nth-child(1) {
+      -webkit-box-ordinal-group: 2;
+      -webkit-order: 1;
+          -ms-flex-order: 1;
+              order: 1; }
+    .schema-item:nth-child(2) {
+      -webkit-box-ordinal-group: 3;
+      -webkit-order: 2;
+          -ms-flex-order: 2;
+              order: 2; }
+    .schema-item:nth-child(3) {
+      -webkit-box-ordinal-group: 5;
+      -webkit-order: 4;
+          -ms-flex-order: 4;
+              order: 4; }
+    .schema-item:nth-child(4) {
+      -webkit-box-ordinal-group: 4;
+      -webkit-order: 3;
+          -ms-flex-order: 3;
+              order: 3; }
+    .schema-item:nth-child(5) {
+      -webkit-box-ordinal-group: 6;
+      -webkit-order: 5;
+          -ms-flex-order: 5;
+              order: 5; }
+    .schema-item:nth-child(6) {
+      -webkit-box-ordinal-group: 7;
+      -webkit-order: 6;
+          -ms-flex-order: 6;
+              order: 6; } }
+  @media screen and (max-width: 1280px) {
+    .schema-item {
+      max-width: 400px; }
+      .schema-item h3 {
+        max-width: 400px; } }
+  @media screen and (max-width: 980px) {
+    .schema-item {
+      max-width: 250px; }
+      .schema-item h3 {
+        max-width: 250px;
+        font-size: 38px; } }
+  @media screen and (max-width: 600px) {
+    .schema-item:nth-child(1) {
+      -webkit-box-ordinal-group: 2;
+      -webkit-order: 1;
+          -ms-flex-order: 1;
+              order: 1; }
+    .schema-item:nth-child(2) {
+      -webkit-box-ordinal-group: 3;
+      -webkit-order: 2;
+          -ms-flex-order: 2;
+              order: 2; }
+    .schema-item:nth-child(3) {
+      -webkit-box-ordinal-group: 4;
+      -webkit-order: 3;
+          -ms-flex-order: 3;
+              order: 3; }
+    .schema-item:nth-child(4) {
+      -webkit-box-ordinal-group: 5;
+      -webkit-order: 4;
+          -ms-flex-order: 4;
+              order: 4; }
+    .schema-item:nth-child(5) {
+      -webkit-box-ordinal-group: 6;
+      -webkit-order: 5;
+          -ms-flex-order: 5;
+              order: 5; }
+    .schema-item:nth-child(6) {
+      -webkit-box-ordinal-group: 7;
+      -webkit-order: 6;
+          -ms-flex-order: 6;
+              order: 6; } }
+  .schema-item .number-step {
+    font-size: 150px;
+    font-weight: 700;
+    color: #D3D3D3;
+    position: relative;
+    padding-left: 38px; }
+    @media screen and (max-width: 1280px) {
+      .schema-item .number-step {
+        font-size: 120px; } }
+    @media screen and (max-width: 980px) {
+      .schema-item .number-step {
+        font-size: 92px;
+        padding-left: 15px; } }
+  .schema-item .descr-step {
+    font-size: 18px;
+    max-width: 325px;
+    width: 100%;
+    position: absolute;
+    padding-left: 102px; }
+    .schema-item .descr-step span {
+      font-size: 24px;
+      font-weight: 600; }
+    @media screen and (max-width: 1280px) {
+      .schema-item .descr-step {
+        padding-left: 70px; } }
+    @media screen and (max-width: 980px) {
+      .schema-item .descr-step {
+        padding-left: 50px;
+        font-size: 16px;
+        max-width: 200px; } }
+
+.schema-item-background {
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }

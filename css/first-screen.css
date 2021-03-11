@@ -1,0 +1,90 @@
+@media screen and (max-width: 750px) {
+  #first-screen {
+    text-align: center; } }
+
+@media screen and (max-width: 1600px) {
+  #first-screen {
+    padding-top: 70px; } }
+
+@media screen and (max-width: 1400px) {
+  #first-screen {
+    padding-top: 50px; } }
+
+@media screen and (max-width: 1280px) {
+  #first-screen {
+    padding-top: 100px; } }
+
+@media screen and (max-width: 1024px) {
+  #first-screen {
+    padding-top: 150px; } }
+
+@media screen and (max-width: 980px) {
+  #first-screen {
+    padding-top: 80px; } }
+
+@media screen and (max-width: 800px) {
+  #first-screen {
+    padding-top: 70px; } }
+
+@media screen and (max-width: 750px) {
+  #first-screen {
+    padding-top: 300px; } }
+
+#first-screen .offer {
+  z-index: 30; }
+  #first-screen .offer h1 {
+    font-size: 72px;
+    font-weight: 700;
+    color: #141414;
+    max-width: 770px;
+    width: 100%;
+    padding-top: 200px; }
+    @media screen and (max-width: 1800px) {
+      #first-screen .offer h1 {
+        padding-top: 100px; } }
+    @media screen and (max-width: 1600px) {
+      #first-screen .offer h1 {
+        padding-top: 50px; } }
+    @media screen and (max-width: 1450px) {
+      #first-screen .offer h1 {
+        max-width: 700px;
+        font-size: 64px; } }
+    @media screen and (max-width: 1366px) {
+      #first-screen .offer h1 {
+        font-size: 62px; } }
+    @media screen and (max-width: 1280px) {
+      #first-screen .offer h1 {
+        font-size: 48px;
+        max-width: 550px;
+        padding-top: 30px; } }
+    @media screen and (max-width: 1024px) {
+      #first-screen .offer h1 {
+        padding-top: 10px;
+        font-size: 36px; } }
+    @media screen and (max-width: 600px) {
+      #first-screen .offer h1 {
+        font-size: 32px; } }
+  #first-screen .offer span {
+    color: #141414;
+    font-weight: 400;
+    font-size: 30px;
+    display: block; }
+    @media screen and (max-width: 600px) {
+      #first-screen .offer span {
+        font-size: 24px; } }
+
+#first-screen .first-screen-buttons {
+  padding-top: 130px; }
+  @media screen and (max-width: 600px) {
+    #first-screen .first-screen-buttons {
+      padding-top: 50px; } }
+  #first-screen .first-screen-buttons .recall-btn {
+    background: transparent;
+    text-decoration: underline;
+    font-size: 20px;
+    font-weight: 400;
+    padding-left: 40px; }
+    @media screen and (max-width: 600px) {
+      #first-screen .first-screen-buttons .recall-btn {
+        padding-left: 0;
+        padding-top: 25px; } }

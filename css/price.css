@@ -1,0 +1,161 @@
+#prices {
+  padding-top: 75px; }
+  #prices .prices-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    max-width: 100%; }
+    @media screen and (max-width: 600px) {
+      #prices .prices-container {
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center; } }
+    #prices .prices-container .custom-prev-btn, #prices .prices-container .custom-next-btn {
+      font-size: 80px;
+      color: #858585; }
+      @media screen and (max-width: 980px) {
+        #prices .prices-container .custom-prev-btn, #prices .prices-container .custom-next-btn {
+          font-size: 48px; } }
+      @media screen and (max-width: 600px) {
+        #prices .prices-container .custom-prev-btn, #prices .prices-container .custom-next-btn {
+          display: none; } }
+    #prices .prices-container .card-wrap {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      max-width: 1410px;
+      width: 100%;
+      padding-top: 8px; }
+      @media screen and (max-width: 1750px) {
+        #prices .prices-container .card-wrap {
+          max-width: 940px; } }
+      @media screen and (max-width: 1280px) {
+        #prices .prices-container .card-wrap {
+          max-width: 420px; } }
+      @media screen and (max-width: 600px) {
+        #prices .prices-container .card-wrap {
+          max-width: 250px;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
+              -ms-flex-direction: column;
+                  flex-direction: column; } }
+      #prices .prices-container .card-wrap .prices-card {
+        max-width: 460px;
+        width: 100%;
+        background: #ffffff;
+        height: 840px; }
+        @media screen and (max-width: 600px) {
+          #prices .prices-container .card-wrap .prices-card {
+            height: 555px; } }
+        @media screen and (max-width: 450px) {
+          #prices .prices-container .card-wrap .prices-card {
+            max-width: 200px; } }
+        @media screen and (max-width: 600px) {
+          #prices .prices-container .card-wrap .prices-card {
+            max-width: 250px; } }
+        #prices .prices-container .card-wrap .prices-card img {
+          position: absolute;
+          top: -40px;
+          right: 0px; }
+          @media screen and (max-width: 600px) {
+            #prices .prices-container .card-wrap .prices-card img {
+              top: -30px;
+              width: 200px;
+              height: 200px; } }
+        #prices .prices-container .card-wrap .prices-card-container {
+          position: relative;
+          margin-left: 45px; }
+          @media screen and (max-width: 600px) {
+            #prices .prices-container .card-wrap .prices-card-container {
+              margin-left: 25px;
+              margin-right: 10px; } }
+          #prices .prices-container .card-wrap .prices-card-container .small-intro .name-category {
+            font-size: 30px;
+            font-weight: 700;
+            margin: 0;
+            padding-top: 45px; }
+            @media screen and (max-width: 600px) {
+              #prices .prices-container .card-wrap .prices-card-container .small-intro .name-category {
+                padding-top: 15px;
+                font-size: 22px; } }
+          #prices .prices-container .card-wrap .prices-card-container .small-intro .type {
+            font-size: 18px;
+            display: block; }
+            @media screen and (max-width: 600px) {
+              #prices .prices-container .card-wrap .prices-card-container .small-intro .type {
+                font-size: 14px; } }
+          #prices .prices-container .card-wrap .prices-card-container .small-intro .time-learning {
+            font-size: 24px;
+            font-weight: 600; }
+            @media screen and (max-width: 600px) {
+              #prices .prices-container .card-wrap .prices-card-container .small-intro .time-learning {
+                font-size: 14px; } }
+          #prices .prices-container .card-wrap .prices-card-container .include-course {
+            padding-top: 30px; }
+            @media screen and (max-width: 600px) {
+              #prices .prices-container .card-wrap .prices-card-container .include-course {
+                padding-top: 10px; } }
+            #prices .prices-container .card-wrap .prices-card-container .include-course .include-course-title {
+              font-size: 24px; }
+              @media screen and (max-width: 600px) {
+                #prices .prices-container .card-wrap .prices-card-container .include-course .include-course-title {
+                  font-size: 16px; } }
+            #prices .prices-container .card-wrap .prices-card-container .include-course ul li {
+              color: #3BB361; }
+              #prices .prices-container .card-wrap .prices-card-container .include-course ul li span {
+                font-weight: 600;
+                color: #141414;
+                font-size: 24px; }
+                @media screen and (max-width: 600px) {
+                  #prices .prices-container .card-wrap .prices-card-container .include-course ul li span {
+                    font-size: 14px; } }
+          #prices .prices-container .card-wrap .prices-card-container .descr-course ul {
+            padding: 0;
+            margin: 0;
+            padding-top: 35px; }
+            @media screen and (max-width: 600px) {
+              #prices .prices-container .card-wrap .prices-card-container .descr-course ul {
+                padding-top: 15px; } }
+            #prices .prices-container .card-wrap .prices-card-container .descr-course ul li {
+              font-size: 16px;
+              list-style: none; }
+              @media screen and (max-width: 600px) {
+                #prices .prices-container .card-wrap .prices-card-container .descr-course ul li {
+                  font-size: 10px; } }
+          #prices .prices-container .card-wrap .prices-card-container .price {
+            font-size: 30px;
+            font-weight: 700;
+            padding-top: 50px; }
+            @media screen and (max-width: 600px) {
+              #prices .prices-container .card-wrap .prices-card-container .price {
+                padding-top: 20px;
+                font-size: 20px; } }
+          #prices .prices-container .card-wrap .prices-card-container .price-cb {
+            padding-top: 25px; }
+            @media screen and (max-width: 600px) {
+              #prices .prices-container .card-wrap .prices-card-container .price-cb {
+                padding-top: 10px;
+                font-size: 20px; } }
+          #prices .prices-container .card-wrap .prices-card-container .btn {
+            margin-top: 30px;
+            margin-bottom: 50px; }
+            @media screen and (max-width: 600px) {
+              #prices .prices-container .card-wrap .prices-card-container .btn {
+                margin-top: 15px;
+                margin-bottom: 20px; } }

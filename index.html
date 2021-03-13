@@ -61,7 +61,14 @@
 </head>
 <!-- //HEAD of this Page -->
 
-<body x-data="{ active: (window.localStorage.getItem('city') || 'Горно-Алтайск'), cities: ['Горно-Алтайск', 'Онгудай'] }" x-cloak>
+<body x-data="{
+    active: (window.localStorage.getItem('city') || 'Горно-Алтайск'),
+    cities: ['Горно-Алтайск', 'Онгудай'],
+    cords: {
+        'Горно-Алтайск': [51.955231, 85.935534],
+        'Онгудай': [50.750683, 86.132314],
+    }
+}" x-cloak>
 
     <!-- Header -->
     <header>
@@ -115,16 +122,16 @@
                         <li><a target="_self" href="#soc-net">Контакты</a></li>
                     </ul>
                 </nav>
-                <div class="contacts-phone" style="display: flex; align-items: center; margin-left: 20px;">
+                <div class="contacts-phone" style="align-items: center; margin-left: 20px;">
                     <div class="dropdown">
-                        <div style="font-size: 14px; font-weight: normal; text-decoration: none; margin-left: 0; white-space: nowrap;">
+                        <div style="min-width: 113px; text-align: right; font-size: 14px; font-weight: normal; text-decoration: none; margin-left: 0; white-space: nowrap;">
                             <span x-text="active"></span> <i class="fas fa-angle-down"></i>
                         </div>
 
                         <div class="dropdown-content">
                             <ul>
                                 <template x-for="city, idx in cities">
-                                    <li :class="active == city ? 'active' : ''" @click="active = city; window.localStorage.setItem('city', city);" x-text="city" :key="idx"></li>
+                                    <li :class="active == city ? 'active' : ''" @click="active = city; window.localStorage.setItem('city', city); window.mymap.setCenter(new google.maps.LatLng(cords[active][0], cords[active][1]));" x-text="city" :key="idx"></li>
                                 </template>
                             </ul>
                         </div>
@@ -1404,13 +1411,16 @@
 
                 <div class="dropdown" style="display: inline-block; width: auto; align-self: flex-start; margin-bottom: 2rem;">
                     <div style="font-size: 24px; font-weight: normal; text-decoration: none; margin-left: 0;">
-                        <span x-text="active"></span> <i class="fas fa-angle-down"></i>
+                        <span x-text="active"></span>
+                        <svg style="vertical-align: middle;" width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L7.5 7L14 1" stroke="#141414" stroke-width="2.2"/>
+                        </svg>                            
                     </div>
 
                     <div class="dropdown-content" style="left: 0; transform: none;">
                         <ul>
                             <template x-for="city, idx in cities">
-                                <li :class="active == city ? 'active' : ''" @click="active = city; window.localStorage.setItem('city', city);" x-text="city" :key="idx"></li>
+                                <li :class="active == city ? 'active' : ''" @click="active = city; window.localStorage.setItem('city', city); window.mymap.setCenter(new google.maps.LatLng(cords[active][0], cords[active][1]));" x-text="city" :key="idx"></li>
                             </template>
                         </ul>
                     </div>

@@ -3871,13 +3871,18 @@ footer #footer .container .developers .developer a:hover {
     cursor: pointer;
 }
 
-.dropdown-content ul li:hover {
+.dropdown-content ul li:not(.title):hover {
     background: rgb(59, 179, 97, .5);
 }
 
 .dropdown-content ul li.active {
     font-weight: bold;
-    background: rgb(59, 179, 97, .8);
+    background: rgb(59, 179, 97, .8) !important;
+}
+
+.dropdown-content ul li.title {
+    color: #ccc;
+    font-size: 12px;
 }
 
 [x-cloak] {display: none;}

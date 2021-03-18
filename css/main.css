@@ -3841,7 +3841,8 @@ footer #footer .container .developers .developer a:hover {
     padding: 5px 3px;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content,
+.dropdown.acitve .dropdown-content {
     visibility: visible;
     opacity: 1;
 }

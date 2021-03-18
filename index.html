@@ -1509,10 +1509,10 @@
                                 // Своё изображение иконки метки.
                                 iconImageHref: 'img/assets/mapMark.svg',
                                 // Размеры метки.
-                                iconImageSize: [30, 42],
+                                iconImageSize: [45, 63],
                                 // Смещение левого верхнего угла иконки относительно
                                 // её "ножки" (точки привязки).
-                                iconImageOffset: [-5, -38]
+                                iconImageOffset: [-22, -63]
                             })
 
                             myMap.geoObjects.add(filialPlacemark);
@@ -1536,7 +1536,7 @@
                             
                     </div>
 
-                    <div class="dropdown-content">
+                    <div class="dropdown-content" style="left: 0; transform: none;">
                         <ul>
                             <template x-for="c, idx in cities">
                                 <div :key="idx">

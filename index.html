@@ -69,12 +69,18 @@
                 {
                     name: 'Коммунистический, 76',
                     chords: [51.955379, 85.935634],
-                    phones: ['+7 (913) 991−66−66'],
+                    phones: ['+7 (913) 991−66−66', '+7 (913) 991−66−66'],
+                    address: 'пр. Коммунистический, 76 (ЦУМ, 3 этаж)',
+                    email: 'azc6666@mail.ru',
+                    hours: 'ПН-ПТ 09:00 - 18:00 без перерыва на обед',
                 },
                 {
                     name: 'Коммунистический, 165',
                     chords: [51.971388, 85.897797],
                     phones: ['+7 (913) 991−66−66'],
+                    address: 'пр. Коммунистический 165, 76 (ЦУМ, 3 этаж)',
+                    email: 'azc66645@mail.ru',
+                    hours: 'ПН-ПТ 09:00 - 18:00 <br> c перерывом на обед',
                 },
             ]
         },
@@ -85,6 +91,9 @@
                     name: 'Филиал 1',
                     chords: [50.750740, 86.132185],
                     phones: ['+7 (983) 583−99−99'],
+                    address: 'пр. Коммунистический, 76 (ЦУМ, 3 этаж)',
+                    email: 'azc66346@mail.ru',
+                    hours: 'ПН-ПТ 09:00 - 18:00 без перерыва на обед',
                 },
             ]
         },
@@ -95,6 +104,9 @@
                     name: 'Филиал 2',
                     chords: [50.268254, 85.615959],
                     phones: ['+7 (983) 583−88−99'],
+                    address: 'пр. Коммунистический, 76 (ЦУМ, 3 этаж)',
+                    email: 'azc1166@mail.ru',
+                    hours: 'ПН-ПТ 09:00 - 18:00 без перерыва на обед',
                 },
             ]
         },
@@ -204,7 +216,7 @@
                     </div>
                     <div>
                         <template x-for="p, idx in filial.phones">
-                            <a target="_self" :href="p" x-text="p"></a>
+                            <a target="_self" :href="'tel:' + p" x-text="p"></a>
                         </template>
                     </div>
                 </div>
@@ -1474,58 +1486,60 @@
 
             <div class="popup" style="padding: 3rem 2rem; justify-content: flex-start;">
 
-                <div class="dropdown" style="display: inline-block; width: auto; align-self: flex-start; margin-bottom: 2rem;">
-                    <div style="font-size: 24px; font-weight: normal; text-decoration: none; margin-left: 0;">
-                        <span x-text="active"></span>
-                        <svg style="vertical-align: middle;" width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 1L7.5 7L14 1" stroke="#141414" stroke-width="2.2"/>
-                        </svg>                            
+                <div class="dropdown" style="display: inline-block; width: 100%; align-self: flex-start; margin-bottom: 2rem;">
+                    <div style="font-size: 24px; font-weight: normal; text-decoration: none; margin-left: 0; display: flex; align-items: center; justify-content: space-between;">
+                        <div style="margin-right: 5px;">
+                            <div x-text="city.name"></div>
+                            <div x-text="filial.name" style="color: #ccc; font-size: 12px;"></div>
+                        </div>
+
+                        <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L4 4L7 1" stroke="black"/>
+                        </svg>
+                            
                     </div>
 
-                    <div class="dropdown-content" style="left: 0; transform: none;">
+                    <div class="dropdown-content">
                         <ul>
-                            <template x-for="city, idx in cities">
-                                <li :class="active == city ? 'active' : ''" @click="active = city; window.localStorage.setItem('city', city); window.mymap.setCenter(new google.maps.LatLng(cords[active][0], cords[active][1]));" x-text="city" :key="idx"></li>
+                            <template x-for="c, idx in cities">
+                                <div :key="idx">
+                                    <li class="title"
+                                        x-text="c.name"
+                                    ></li>
+
+                                    <template x-for="f, fidx in c.filials">
+                                        <li :class="f.name == filial.name ? 'active' : ''"
+                                            x-text="f.name"
+                                            :key="fidx"
+                                            @click="filial = f; city = c; console.log(city, filial); window.localStore('filial', f); window.localStore('city', c)"
+                                        ></li>
+                                    </template>
+                                </div>
                             </template>
                         </ul>
                     </div>
                 </div>
                 
-                <div x-show="active == 'Горно-Алтайск'">
+                <div>
                     <div class="adress-street" style="margin-bottom: 1.5rem;">
-                        <img src="img/assets/placeholder.svg" alt="placeholder"> пр. Коммунистический, 76 (ЦУМ, 3 этаж)
+                        <img src="img/assets/placeholder.svg" alt="placeholder">
+                        <span x-html="filial.address"></span>
                     </div>
                     <div class="number-phone" style="margin-bottom: 1.5rem;">
                         <img src="img/assets/phone.svg" alt="phone">
                         <div class="phone-wrap">
-                            <a href="tel:+7 (983) 583−99−99">+7 (983) 583−99−99</a>
+                            <template x-for="p, idx in filial.phones">
+                                <a target="_self" :href="'tel:' + p" x-text="p"></a>
+                            </template>
                         </div>
                     </div>
                     <div class="mail" style="margin-bottom: 1.5rem;">
                         <img src="img/assets/at.svg" alt="at">
-                        <a href="mailto:azc6666@mail.ru">azc6666@mail.ru</a>
+                        <a :href="'mailto:' + filial.email" x-text="filial.email"></a>
                     </div>
                     <div class="time-work" style="margin-bottom: 1.5rem;">
-                        <img src="img/assets/time.svg" alt="time"> ПН-ПТ 09:00 - 18:00 без перерыва на обед
-                    </div>
-                </div>
-                
-                <div x-show="active == 'Онгудай'">
-                    <div class="adress-street" style="margin-bottom: 1.5rem;">
-                        <img src="img/assets/placeholder.svg" alt="placeholder"> пр. Коммунистический, 76 (ЦУМ, 3 этаж)
-                    </div>
-                    <div class="number-phone" style="margin-bottom: 1.5rem;">
-                        <img src="img/assets/phone.svg" alt="phone">
-                        <div class="phone-wrap">
-                            <a href="tel:+79139916666">+7 (913) 991−66−66</a>
-                        </div>
-                    </div>
-                    <div class="mail" style="margin-bottom: 1.5rem;">
-                        <img src="img/assets/at.svg" alt="at">
-                        <a href="mailto:azc6666@mail.ru">azc6666@mail.ru</a>
-                    </div>
-                    <div class="time-work" style="margin-bottom: 1.5rem;">
-                        <img src="img/assets/time.svg" alt="time"> ПН-ПТ 09:00 - 18:00 без перерыва на обед
+                        <img src="img/assets/time.svg" alt="time">
+                        <span x-html="filial.hours"></span>
                     </div>
                 </div>
                 

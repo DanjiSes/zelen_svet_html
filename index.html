@@ -99,12 +99,21 @@
             ]
         },
     ]
+
+    // Util
+    window.localStore = function(name, val) {
+        if (val !== undefined) {
+            return localStorage.setItem(name, JSON.stringify(val))
+        } else {
+            return JSON.parse(localStorage.getItem(name))
+        }
+    }
 </script>
 
 <body x-data="{
     cities: window.cities,
-    city: window.cities[0],
-    filial: window.cities[0].filials[0]
+    city: window.localStore('city') || window.cities[0],
+    filial: window.localStore('filial') || window.cities[0].filials[0]
 }" x-cloak>
 
     <!-- Header -->
@@ -185,7 +194,7 @@
                                             <li :class="f.name == filial.name ? 'active' : ''"
                                                 x-text="f.name"
                                                 :key="fidx"
-                                                @click="filial = f; city = c; console.log(city, filial);"
+                                                @click="filial = f; city = c; console.log(city, filial); window.localStore('filial', f); window.localStore('city', c)"
                                             ></li>
                                         </template>
                                     </div>

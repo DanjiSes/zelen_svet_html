@@ -38,18 +38,106 @@
     <div><img src="https://mc.yandex.ru/watch/57099238" style="position:absolute; left:-9999px;" alt="" /></div>
   </noscript>
   <!-- /Yandex.Metrika counter -->
+
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=34090ebd-ba59-443c-822e-7dcc933ddb49"
+    type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.1/alpine-ie11.min.js"
+    integrity="sha512-FeBN5CYKiIw2XHMxsRFNlXgSr7PDHrbH0wxa1AHjwGL/LqSDux/XEOrkQM0VRKwFCeGnCgTNpFQ3whyb8BUyMA=="
+    crossorigin="anonymous"></script>
+
+  <script>
+    window.cities = [
+      {
+        name: 'Горно-Алтайск',
+        filials: [
+          {
+            name: 'Коммунистический, 76',
+            chords: [51.955379, 85.935634],
+            phones: ['+7 (913) 991−66−66', '+7 (913) 991−66−66'],
+            address: 'пр. Коммунистический, 76 (ЦУМ, 3 этаж)',
+            email: 'azc6666@mail.ru',
+            hours: 'ПН-ПТ 09:00 - 18:00 без перерыва на обед',
+          },
+          {
+            name: 'Коммунистический, 165',
+            chords: [51.971388, 85.897797],
+            phones: ['+7 (913) 991−66−66'],
+            address: 'пр. Коммунистический 165, 76 (ЦУМ, 3 этаж)',
+            email: 'azc66645@mail.ru',
+            hours: 'ПН-ПТ 09:00 - 18:00 <br> c перерывом на обед',
+          },
+        ]
+      },
+      {
+        name: 'Онгудай',
+        filials: [
+          {
+            name: 'Филиал 1',
+            chords: [50.750740, 86.132185],
+            phones: ['+7 (983) 583−99−99'],
+            address: 'пр. Коммунистический, 76 (ЦУМ, 3 этаж)',
+            email: 'azc66346@mail.ru',
+            hours: 'ПН-ПТ 09:00 - 18:00 без перерыва на обед',
+          },
+          {
+            name: 'Филиал 11',
+            chords: [50.750740, 86.132185],
+            phones: ['+7 (983) 583−99−99'],
+            address: 'пр. Коммунистический, 76 (ЦУМ, 3 этаж)',
+            email: 'azc66346@mail.ru',
+            hours: 'ПН-ПТ 09:00 - 18:00 без перерыва на обед',
+          },
+          {
+            name: 'Филиал 111',
+            chords: [50.750740, 86.132185],
+            phones: ['+7 (983) 583−99−99'],
+            address: 'пр. Коммунистический, 76 (ЦУМ, 3 этаж)',
+            email: 'azc66346@mail.ru',
+            hours: 'ПН-ПТ 09:00 - 18:00 без перерыва на обед',
+          },
+        ]
+      },
+      {
+        name: 'Усть-Кокса',
+        filials: [
+          {
+            name: 'Филиал 2',
+            chords: [50.268254, 85.615959],
+            phones: ['+7 (983) 583−88−99'],
+            address: 'пр. Коммунистический, 76 (ЦУМ, 3 этаж)',
+            email: 'azc1166@mail.ru',
+            hours: 'ПН-ПТ 09:00 - 18:00 без перерыва на обед',
+          },
+        ]
+      },
+    ]
+
+    // Util
+    window.localStore = function (name, val) {
+      if (val !== undefined) {
+        if (name === 'filial') window.yamap.setCenter(val.chords)
+        return localStorage.setItem(name, JSON.stringify(val))
+      } else {
+        return JSON.parse(localStorage.getItem(name))
+      }
+    }
+  </script>
 </head>
 <!-- //HEAD of this Page -->
 
-<body>
+<body x-data="{
+  cities: window.cities,
+  city: window.localStore('city') || window.cities[0],
+  filial: window.localStore('filial') || window.cities[0].filials[0]
+}" x-cloak>
 
   <!-- Header -->
   <header>
-    <div id="header">
+    <div id="header" class="sticky">
       <div class="container">
 
         <a href="index.html" target="_self" class="logo">
-          <img src="img/assets/logo.png" alt="logo">
+          <img src="img/assets/logo.svg" alt="logo" style="width: 51px; height: auto;">
           <div class="logo-wrap">
             <span class="name-school">Зеленый свет</span>
             <span class="logo-descr">автошкола в горно-алтайске</span>
@@ -58,20 +146,21 @@
         <nav class="navbar">
           <a class="close-btn" href="#close">&times;</a>
           <ul class="topmenu">
-            <li><a target="_self" href="index.html#about-us">Обучение</a></li>
-            <li><a target="_self" href="index.html#prices">стоимость</a></li>
-            <li><a target="_self" href="index.html#instructors">инструкторы</a></li>
-            <li><a class="g" target="_self" href="#">Курсанту<i class="fas fa-angle-down"></i></a>
+            <li><a target="_self" href="#about-us">Обучение</a></li>
+            <li><a target="_self" href="#prices">стоимость</a></li>
+            <li><a target="_self" href="#instructors">инструкторы</a></li>
+            <li>
+              <a class="g" target="_self" href="#">Курсанту<i class="fas fa-angle-down"></i></a>
               <ul class="submenu">
-                <li><a target="_self" href="http://online.kursantka.ru/profile/ks_auth/?pageID=171">График вождения</a>
-                </li>
+                <li><a target="_self" href="http://online.kursantka.ru/profile/ks_auth/?pageID=171">График
+                    вождения</a></li>
                 <li><a target="_blank" href="https://yadi.sk/d/E7ByhEvT6BJ-sQ">Экзамен ГИБДД</a></li>
                 <li><a target="_self" href="routes.html">Маршруты</a></li>
               </ul>
             </li>
-            <li><a target="_self" href="index.html#stock">акции</a></li>
-            <li><a target="_self" href="index.html#customer-feedback">отзывы</a></li>
-            <li><a target="_self" href="index.html#soc-net">Контакты</a></li>
+            <li><a target="_self" href="#stock">акции</a></li>
+            <li><a target="_self" href="#customer-feedback">отзывы</a></li>
+            <li><a target="_self" href="#soc-net">Контакты</a></li>
           </ul>
         </nav>
         <div class="menu-link">
@@ -82,29 +171,54 @@
         <nav class="navbar-2">
           <a class="close-btn" target="_self" href="#close"><i class="fas fa-times"></i></a>
           <ul class="topmenu">
-            <li><a target="_self" href="index.html#about-us">Обучение</a></li>
-            <li><a target="_self" href="index.html#prices">стоимость</a></li>
-            <li><a target="_self" href="index.html#instructors">инструкторы</a></li>
-            <a href="http://online.kursantka.ru/profile/ks_auth/?pageID=171" target="_blank">График вождения</a>
+            <li><a target="_self" href="#about-us">Обучение</a></li>
+            <li><a target="_self" href="#prices">стоимость</a></li>
+            <li><a target="_self" href="#instructors">инструкторы</a></li>
+            <a href="http://online.kursantka.ru/profile/ks_auth/?pageID=171" target="_blank">График
+              вождения</a>
             <a target="_blank" href="https://yadi.sk/d/E7ByhEvT6BJ-sQ">Экзамен ГИБДД</a>
             <a target="_self" href="routes.html">Маршруты</a>
-            <!-- <li><a class="g" target="_self" href="#">Курсанту<i class="fas fa-angle-down"></i></a>
-							<ul class="submenu">
-                                <li><a target="_self" href="http://online.kursantka.ru/profile/ks_auth/?pageID=171">График вождения</a></li>
-                                <li><a target="_self" href="#">Расположение полигона</a></li>
-                                <li><a target="_self" href="routes.html">Маршруты</a></li>
-                            </ul>
-						</li> -->
-            <li><a target="_self" href="index.html#stock">акции</a></li>
-            <li><a target="_self" href="index.html#customer-feedback">отзывы</a></li>
-            <li><a target="_self" href="index.html#soc-net">Контакты</a></li>
+            <li><a target="_self" href="#stock">акции</a></li>
+            <li><a target="_self" href="#customer-feedback">отзывы</a></li>
+            <li><a target="_self" href="#soc-net">Контакты</a></li>
           </ul>
         </nav>
-        <div class="contacts-phone">
-          <p>Горно-Алтайск</p>
-          <a target="_self" href="tel:+79139916666">+7 (913) 991−66−66</a>
-          <p>Онгудай</p>
-          <a target="_self" href="tel:+79236626666">+7 (983) 583−99−99</a>
+        <div class="contacts-phone" style="align-items: center; margin-left: 20px;">
+          <div class="dropdown">
+            <div
+              style="min-width: 160px; text-align: right; font-size: 14px; font-weight: normal; text-decoration: none; margin-left: 0; white-space: nowrap; display: flex; align-items: center; justify-content: flex-end;">
+              <div style="margin-right: 5px;">
+                <div x-text="city.name"></div>
+                <div x-text="filial.name" style="color: #ccc; font-size: 12px;"></div>
+              </div>
+
+              <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L4 4L7 1" stroke="black" />
+              </svg>
+
+            </div>
+
+            <div class="dropdown-content">
+              <ul>
+                <template x-for="c, idx in cities">
+                  <div :key="idx">
+                    <li class="title" x-text="c.name"></li>
+
+                    <template x-for="f, fidx in c.filials">
+                      <li :class="f.name == filial.name ? 'active' : ''" x-text="f.name" :key="fidx"
+                        @click="filial = f; city = c; console.log(city, filial); window.localStore('filial', f); window.localStore('city', c)">
+                      </li>
+                    </template>
+                  </div>
+                </template>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <template x-for="p, idx in filial.phones">
+              <a target="_self" :href="'tel:' + p" x-text="p"></a>
+            </template>
+          </div>
         </div>
       </div>
     </div>

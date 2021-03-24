@@ -63,86 +63,86 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.1/alpine-ie11.min.js"
         integrity="sha512-FeBN5CYKiIw2XHMxsRFNlXgSr7PDHrbH0wxa1AHjwGL/LqSDux/XEOrkQM0VRKwFCeGnCgTNpFQ3whyb8BUyMA=="
         crossorigin="anonymous"></script>
+
+    <script>
+        window.cities = [
+            {
+                name: 'Горно-Алтайск',
+                filials: [
+                    {
+                        name: 'Коммунистический, 76',
+                        chords: [51.955379, 85.935634],
+                        phones: ['+7 (913) 991−66−66', '+7 (913) 991−66−66'],
+                        address: 'пр. Коммунистический, 76 (ЦУМ, 3 этаж)',
+                        email: 'azc6666@mail.ru',
+                        hours: 'ПН-ПТ 09:00 - 18:00 без перерыва на обед',
+                    },
+                    {
+                        name: 'Коммунистический, 165',
+                        chords: [51.971388, 85.897797],
+                        phones: ['+7 (913) 991−66−66'],
+                        address: 'пр. Коммунистический 165, 76 (ЦУМ, 3 этаж)',
+                        email: 'azc66645@mail.ru',
+                        hours: 'ПН-ПТ 09:00 - 18:00 <br> c перерывом на обед',
+                    },
+                ]
+            },
+            {
+                name: 'Онгудай',
+                filials: [
+                    {
+                        name: 'Филиал 1',
+                        chords: [50.750740, 86.132185],
+                        phones: ['+7 (983) 583−99−99'],
+                        address: 'пр. Коммунистический, 76 (ЦУМ, 3 этаж)',
+                        email: 'azc66346@mail.ru',
+                        hours: 'ПН-ПТ 09:00 - 18:00 без перерыва на обед',
+                    },
+                    {
+                        name: 'Филиал 11',
+                        chords: [50.750740, 86.132185],
+                        phones: ['+7 (983) 583−99−99'],
+                        address: 'пр. Коммунистический, 76 (ЦУМ, 3 этаж)',
+                        email: 'azc66346@mail.ru',
+                        hours: 'ПН-ПТ 09:00 - 18:00 без перерыва на обед',
+                    },
+                    {
+                        name: 'Филиал 111',
+                        chords: [50.750740, 86.132185],
+                        phones: ['+7 (983) 583−99−99'],
+                        address: 'пр. Коммунистический, 76 (ЦУМ, 3 этаж)',
+                        email: 'azc66346@mail.ru',
+                        hours: 'ПН-ПТ 09:00 - 18:00 без перерыва на обед',
+                    },
+                ]
+            },
+            {
+                name: 'Усть-Кокса',
+                filials: [
+                    {
+                        name: 'Филиал 2',
+                        chords: [50.268254, 85.615959],
+                        phones: ['+7 (983) 583−88−99'],
+                        address: 'пр. Коммунистический, 76 (ЦУМ, 3 этаж)',
+                        email: 'azc1166@mail.ru',
+                        hours: 'ПН-ПТ 09:00 - 18:00 без перерыва на обед',
+                    },
+                ]
+            },
+        ]
+
+        // Util
+        window.localStore = function (name, val) {
+            if (val !== undefined) {
+                if (name === 'filial') window.yamap.setCenter(val.chords)
+                return localStorage.setItem(name, JSON.stringify(val))
+            } else {
+                return JSON.parse(localStorage.getItem(name))
+            }
+        }
+    </script>
 </head>
 <!-- //HEAD of this Page -->
-
-<script>
-    window.cities = [
-        {
-            name: 'Горно-Алтайск',
-            filials: [
-                {
-                    name: 'Коммунистический, 76',
-                    chords: [51.955379, 85.935634],
-                    phones: ['+7 (913) 991−66−66', '+7 (913) 991−66−66'],
-                    address: 'пр. Коммунистический, 76 (ЦУМ, 3 этаж)',
-                    email: 'azc6666@mail.ru',
-                    hours: 'ПН-ПТ 09:00 - 18:00 без перерыва на обед',
-                },
-                {
-                    name: 'Коммунистический, 165',
-                    chords: [51.971388, 85.897797],
-                    phones: ['+7 (913) 991−66−66'],
-                    address: 'пр. Коммунистический 165, 76 (ЦУМ, 3 этаж)',
-                    email: 'azc66645@mail.ru',
-                    hours: 'ПН-ПТ 09:00 - 18:00 <br> c перерывом на обед',
-                },
-            ]
-        },
-        {
-            name: 'Онгудай',
-            filials: [
-                {
-                    name: 'Филиал 1',
-                    chords: [50.750740, 86.132185],
-                    phones: ['+7 (983) 583−99−99'],
-                    address: 'пр. Коммунистический, 76 (ЦУМ, 3 этаж)',
-                    email: 'azc66346@mail.ru',
-                    hours: 'ПН-ПТ 09:00 - 18:00 без перерыва на обед',
-                },
-                {
-                    name: 'Филиал 11',
-                    chords: [50.750740, 86.132185],
-                    phones: ['+7 (983) 583−99−99'],
-                    address: 'пр. Коммунистический, 76 (ЦУМ, 3 этаж)',
-                    email: 'azc66346@mail.ru',
-                    hours: 'ПН-ПТ 09:00 - 18:00 без перерыва на обед',
-                },
-                {
-                    name: 'Филиал 111',
-                    chords: [50.750740, 86.132185],
-                    phones: ['+7 (983) 583−99−99'],
-                    address: 'пр. Коммунистический, 76 (ЦУМ, 3 этаж)',
-                    email: 'azc66346@mail.ru',
-                    hours: 'ПН-ПТ 09:00 - 18:00 без перерыва на обед',
-                },
-            ]
-        },
-        {
-            name: 'Усть-Кокса',
-            filials: [
-                {
-                    name: 'Филиал 2',
-                    chords: [50.268254, 85.615959],
-                    phones: ['+7 (983) 583−88−99'],
-                    address: 'пр. Коммунистический, 76 (ЦУМ, 3 этаж)',
-                    email: 'azc1166@mail.ru',
-                    hours: 'ПН-ПТ 09:00 - 18:00 без перерыва на обед',
-                },
-            ]
-        },
-    ]
-
-    // Util
-    window.localStore = function (name, val) {
-        if (val !== undefined) {
-            if (name === 'filial') window.yamap.setCenter(val.chords)
-            return localStorage.setItem(name, JSON.stringify(val))
-        } else {
-            return JSON.parse(localStorage.getItem(name))
-        }
-    }
-</script>
 
 <body x-data="{
     cities: window.cities,

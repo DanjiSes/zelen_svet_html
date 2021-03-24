@@ -286,6 +286,109 @@
         </ul>
       </section>
     </div>
+
+    <!-- карта -->
+    <section class="map" style="min-height: 546px; display: flex;">
+
+      <div id="map" class="map" style="min-height: 450px; width: 100%;"></div>
+
+      <script>
+        // Maps work script
+        ymaps.ready(function () {
+          var filial = window.localStore('filial') || window.cities[0].filials[0];
+
+          var myMap = window.yamap = new ymaps.Map('map', {
+            center: filial.chords,
+            zoom: 16,
+            controls: ['zoomControl'],
+          });
+
+          window.cities.forEach(function (c) {
+            c.filials.forEach(function (f) {
+              var filialPlacemark = new ymaps.Placemark(f.chords, {
+                // hintContent: 'Собственный значок метки',
+                // balloonContent: 'Это красивая метка'
+              }, {
+                // Опции.
+                // Необходимо указать данный тип макета.
+                iconLayout: 'default#image',
+                // Своё изображение иконки метки.
+                iconImageHref: 'img/assets/mapMark.svg',
+                // Размеры метки.
+                iconImageSize: [45, 63],
+                // Смещение левого верхнего угла иконки относительно
+                // её "ножки" (точки привязки).
+                iconImageOffset: [-22, -63]
+              })
+
+              myMap.geoObjects.add(filialPlacemark);
+            })
+          })
+        });
+      </script>
+
+      <div class="popup" style="padding: 3rem 2rem; justify-content: flex-start;">
+
+        <div class="dropdown" style="display: inline-block; width: 100%; align-self: flex-start; margin-bottom: 2rem;">
+          <div
+            style="font-size: 24px; font-weight: normal; text-decoration: none; margin-left: 0; display: flex; align-items: center; justify-content: space-between;">
+            <div style="margin-right: 5px;">
+              <div x-text="city.name"></div>
+              <div x-text="filial.name" style="color: #ccc; font-size: 12px;"></div>
+            </div>
+
+            <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L4 4L7 1" stroke="black" />
+            </svg>
+
+          </div>
+
+          <div class="dropdown-content" style="left: 0; transform: none;">
+            <ul>
+              <template x-for="c, idx in cities">
+                <div :key="idx">
+                  <li class="title" x-text="c.name"></li>
+
+                  <template x-for="f, fidx in c.filials">
+                    <li :class="f.name == filial.name ? 'active' : ''" x-text="f.name" :key="fidx"
+                      @click="filial = f; city = c; console.log(city, filial); window.localStore('filial', f); window.localStore('city', c)">
+                    </li>
+                  </template>
+                </div>
+              </template>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="adress-street" style="margin-bottom: 1.5rem;">
+            <img src="img/assets/placeholder.svg" alt="placeholder">
+            <span x-html="filial.address"></span>
+          </div>
+          <div class="number-phone" style="margin-bottom: 1.5rem;">
+            <img src="img/assets/phone.svg" alt="phone">
+            <div class="phone-wrap">
+              <template x-for="p, idx in filial.phones">
+                <a target="_self" :href="'tel:' + p" x-text="p"></a>
+              </template>
+            </div>
+          </div>
+          <div class="mail" style="margin-bottom: 1.5rem;">
+            <img src="img/assets/at.svg" alt="at">
+            <a :href="'mailto:' + filial.email" x-text="filial.email"></a>
+          </div>
+          <div class="time-work" style="margin-bottom: 1.5rem;">
+            <img src="img/assets/time.svg" alt="time">
+            <span x-html="filial.hours"></span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="address-list"></div>
+
+    </section>
+    <!-- карта -->
   </main>
 
   <!-- Footer -->
